@@ -19,9 +19,7 @@ body {
 
 #gameplaceholder {
   height: 570px;
-  width: 570x;
+  width: 570px;
   margin: auto;
   background-color: #555;
-  display: table-cell;
-  verticle-align: middle
 }
