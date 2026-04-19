@@ -8,17 +8,13 @@ body {
 }
 
 #webtitle {
-  width: 320px;
   text-align: center;
   font-size: 5vw;
-  margin: auto
 }
 
 #authorship {
-  width: 400px;
   text-align: center;
-  font-size: 50px;
-  margin: auto
+  font-size: 25px;
 }
 
 #gameplaceholder {
