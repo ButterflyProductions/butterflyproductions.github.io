@@ -4,7 +4,7 @@
 }  
 
 #webtitle {
-  font-family: 'Beyond Wonderland'
+  font-family: 'Beyond Wonderland';
   width: 320px;
   margin: auto
 }
@@ -12,6 +12,6 @@
 #gameplaceholder {
   height: 500px;
   width: 500px;
-  margin: auto
+  margin: auto;
   background-color: #555
 }
