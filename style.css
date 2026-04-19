@@ -14,6 +14,13 @@ body {
   margin: auto
 }
 
+#authorship {
+  width: 400px;
+  text-align: center;
+  font-size: 5px;
+  margin: auto
+}
+
 #gameplaceholder {
   height: 90vw;
   width: 90vw;
