@@ -3,8 +3,11 @@
   src: url('fonts/beyond-wonderland.regular.ttf')
 }  
 
+h {
+  font-family: 'Beyond Wonderland'
+}
+
 #webtitle {
-  font-family: 'Beyond Wonderland';
   width: 320px;
   margin: auto
 }
