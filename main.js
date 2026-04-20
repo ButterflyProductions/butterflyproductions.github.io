@@ -9,8 +9,11 @@ Notes: I hope to fucking god this works.
 var player = document.getElementById("playerplaceholder")
 var gamescreen = document.getElementById("gameplaceholder")
 
-var playerstyle = window.getComputedStyle(player)
-var gameattributes = window.getComputedStyle(gamescreen)
+var playerID = "playerplaceholder"
+var gameID = "gameplaceholder"
+
+var playerstyle = window.getComputedStyle("playerplaceholder")
+var gameattributes = window.getComputedStyle("gameplaceholder")
 
 var playerX = playerstyle.getPropertyValue(left).replace("px","")
 var playerY = playerstyle.getPropertyValue(top).replace("px","")
@@ -27,10 +30,9 @@ function move(element, direction, distance) {
     if(movementdirection === "up" || "left") {
         distance *= -1
     }
-    elementstyle = window.getComputedStyle(element)
-    elementstyle.movementdirection = (elementstyle.getPropertyValue(movementdirection).replace("px","") + movementdistance) + "px"
-    if(elementstyle.getPropertyValue(movementdirection).replace("px","") > gamebounds.direction) {
-        elementstyle.movementdirection = gamebounds.direction
+    element.style.movementdirection = (element.style.getPropertyValue(movementdirection).replace("px","") + movementdistance) + "px"
+    if(element.style.getPropertyValue(movementdirection).replace("px","") > gamebounds.direction) {
+        element.style.movementdirection = gamebounds.direction
     }
 }
 
