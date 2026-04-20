@@ -21,13 +21,17 @@ var whatkey
 
 // ----------- Functions ----------- //
 function move(element, direction, distance) {
+    let direction = direction
     let movementdirection = move.direction() === "up" || "down" ? "top" : "left";
     let movementdistance = distance;
     if(movementdirection === "up" || "left") {
         distance *= -1
     }
     elementstyle = window.getComputedStyle(element)
-    elementstyle.movementdirection = (elementstyle.movementdirection + movementdistance) + "px"
+    elementstyle.movementdirection = (elementstyle.getPropertyValue(movementdirection).replace("px","") + movementdistance) + "px"
+    if(elementstyle.getPropertyValue(movementdirection).replace("px","") > gamebounds.direction) {
+        elementstyle.movementdirection = gamebounds.direction
+    }
 }
 
 function playermovement(whatkey) {
