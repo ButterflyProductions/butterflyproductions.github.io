@@ -23,3 +23,12 @@ body {
   margin: auto;
   background-color: #555;
 }
+
+#playerplaceholder {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 500px;
+  left: 260px;
+  background-color:black;
+}
