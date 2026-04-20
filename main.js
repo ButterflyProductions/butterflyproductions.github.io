@@ -6,20 +6,17 @@ Notes: I hope to fucking god this works.
 */
 
 // Variables
-var player = document.getElementById("playerplaceholder")
-var gamescreen = document.getElementById("gameplaceholder")
+var player = document.getElementById("playerplaceholder");
+var gamescreen = document.getElementById("gameplaceholder");
 
-var playerID = "playerplaceholder"
-var gameID = "gameplaceholder"
+var playerID = "playerplaceholder";
+var gameID = "gameplaceholder";
 
-var playerstyle = window.getComputedStyle("playerplaceholder")
-var gameattributes = window.getComputedStyle("gameplaceholder")
-
-var playerX = playerstyle.getPropertyValue(left).replace("px","")
-var playerY = playerstyle.getPropertyValue(top).replace("px","")
+var playerX = playerstyle.getPropertyValue(left).replace("px","");
+var playerY = playerstyle.getPropertyValue(top).replace("px","");
 var gamebounds = gamescreen.getBoundingClientRect()
 
-var keypresseddown = false
+var keypresseddown = false;
 var whatkey
 
 // ----------- Functions ----------- //
@@ -31,8 +28,21 @@ function move(element, direction, distance) {
         distance *= -1
     }
     element.style.movementdirection = (element.style.getPropertyValue(movementdirection).replace("px","") + movementdistance) + "px"
-    if(element.style.getPropertyValue(movementdirection).replace("px","") > gamebounds.direction) {
-        element.style.movementdirection = gamebounds.direction
+    let elementheight = element.style.getPropertyValue(height)
+    let elementwidth = element.style.getPropertyValue(width)
+    if(element.style.getPropertyValue(movementdirection).replace("px","") < gamebounds.movementdirection) {
+        element.style.movementdirection = gamebounds.movementdirection
+    }
+    if(rawdirection === "down") {
+        rawdirection = "bottom"
+    }
+    if(element.style.getPropertyValue(movementdirection).replace("px","") > gamebounds.rawdirection) {
+        if(rawdirection === "bottom") {
+                    element.style.movementdirection = gamebounds.rawdirection - elementheight
+        }
+        else {
+            element.style.movementdirection = gamebounds.rawdirection - elementwidth
+        }
     }
 }
 
