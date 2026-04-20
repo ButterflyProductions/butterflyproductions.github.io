@@ -7,13 +7,15 @@ Notes: I hope to fucking god this works.
 
 // Variables
 var player = document.getElementById("playerplaceholder");
+console.log(player)
 var gamescreen = document.getElementById("gameplaceholder");
+console.log(gamescreen)
 
 var playerID = "playerplaceholder";
 var gameID = "gameplaceholder";
 
-
 var gamebounds = gamescreen.getBoundingClientRect()
+console.log(gamebounds)
 
 var keypresseddown = false;
 var whatkey
