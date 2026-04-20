@@ -63,13 +63,13 @@ function playermovement(whatkey) {
 }
 
 // Code
-if(player.addEventListener("keydown")) {
+player.addEventListener("keydown", function keydown(event) {
     keypresseddown = true
     whatkey = event.code
-}
-if(player.addEventListener("keyup")) {
+})
+player.addEventListener("keyup", function keyup(event) {
     keypresseddown = false
-}
+})
 
 while(keypresseddown=true)
     playermovement(whatkey)
