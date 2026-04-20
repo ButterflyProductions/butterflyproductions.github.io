@@ -24,7 +24,7 @@ var whatkey
 
 // ----------- Functions ----------- //
 function move(element, direction, distance) {
-    let direction = direction
+    let rawdirection = direction
     let movementdirection = move.direction() === "up" || "down" ? "top" : "left";
     let movementdistance = distance;
     if(movementdirection === "up" || "left") {
