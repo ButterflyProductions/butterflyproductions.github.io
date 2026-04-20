@@ -12,8 +12,7 @@ var gamescreen = document.getElementById("gameplaceholder");
 var playerID = "playerplaceholder";
 var gameID = "gameplaceholder";
 
-var playerX = playerstyle.getPropertyValue(left).replace("px","");
-var playerY = playerstyle.getPropertyValue(top).replace("px","");
+
 var gamebounds = gamescreen.getBoundingClientRect()
 
 var keypresseddown = false;
