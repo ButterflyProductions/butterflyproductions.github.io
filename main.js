@@ -47,6 +47,7 @@ function move(element, direction, distance) {
 }
 
 function playermovement(whatkey) {
+    console.log(whatkey)
     if(whatkey === "ArrowRight" || "KeyD") {
         move(player, "right", 20)
     }
@@ -65,6 +66,7 @@ function playermovement(whatkey) {
 player.addEventListener("keydown", function keydown(event) {
     keypresseddown = true
     whatkey = event.code
+    console.log(event.code)
 })
 player.addEventListener("keyup", function keyup(event) {
     keypresseddown = false
