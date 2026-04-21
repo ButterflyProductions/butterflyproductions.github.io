@@ -17,7 +17,38 @@ var gamebounds = gamescreen.getBoundingClientRect()
 var keypresseddown = false;
 var keypressed = ""
 
-// ----------- Functions ----------- //
+// Code
+addEventListener("keydown", function keydown(event) {  
+    event.preventDefault(); 
+    keypresseddown = true
+    keypressed = event.code
+    console.log(event.code)
+    console.log(keypressed)
+    console.log(keypresseddown)
+})
+addEventListener("keyup", function keyup(event) {
+    keypresseddown = false
+    keypressed = ""
+    console.log(keypresseddown)
+    console.log(keypressed)
+})
+
+if(keypresseddown == true) {
+    console.log("it's activated afljakjdklsalkae")
+    if(keypresseddown === "ArrowRight" || "KeyD") {
+        move(player, "right", 20)
+    }
+    if(keypresseddown === "ArrowLeft" || "KeyA") {
+        move(player, "left", 20)
+    }
+    if(keypresseddown === "ArrowUp" || "KeyW") {
+        move(player, "up", 20)
+    }
+    if(keypresseddown === "ArrowDown" || "KeyS") {
+        move(player,"down", 20)
+    }
+}
+
 function move(element, direction, distance) {
     console.log("move activated!")
     let rawdirection = direction
@@ -52,36 +83,4 @@ function move(element, direction, distance) {
     }
     console.log(elementstyle.movementdirection)
     requestAnimationFrame(move)
-}
-
-// Code
-addEventListener("keydown", function keydown(event) {  
-    event.preventDefault(); 
-    keypresseddown = true
-    keypressed = event.code
-    console.log(event.code)
-    console.log(keypressed)
-    console.log(keypresseddown)
-})
-addEventListener("keyup", function keyup(event) {
-    keypresseddown = false
-    keypressed = ""
-    console.log(keypresseddown)
-    console.log(keypressed)
-})
-
-if(keypresseddown == true) {
-    console.log("it's activated afljakjdklsalkae")
-    if(keypresseddown === "ArrowRight" || "KeyD") {
-        move(player, "right", 20)
-    }
-    if(keypresseddown === "ArrowLeft" || "KeyA") {
-        move(player, "left", 20)
-    }
-    if(keypresseddown === "ArrowUp" || "KeyW") {
-        move(player, "up", 20)
-    }
-    if(keypresseddown === "ArrowDown" || "KeyS") {
-        move(player,"down", 20)
-    }
 }
