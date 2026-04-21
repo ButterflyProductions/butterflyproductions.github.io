@@ -19,6 +19,7 @@ var whatkey
 
 // ----------- Functions ----------- //
 function move(element, direction, distance) {
+    console.log("move activated!")
     let rawdirection = direction
     let movementdirection = direction === "up" || "down" ? "top" : "left";
     let movementdistance = distance;
@@ -54,6 +55,7 @@ function move(element, direction, distance) {
 }
 
 function playermovement(whatkey) {
+    console.log("playermovement activated")
     if(whatkey === "ArrowRight" || "KeyD") {
         move(player, "right", 20)
     }
@@ -79,6 +81,7 @@ addEventListener("keydown", function keydown(event) {
 })
 addEventListener("keyup", function keyup(event) {
     keypresseddown = false
+    console.log(keypresseddown)
 })
 
 if (keypresseddown === true) {
