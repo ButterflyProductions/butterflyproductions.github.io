@@ -26,6 +26,7 @@ function move(element, direction, distance) {
     if(movementdirection === "up" || "left") {
         distance *= -1
     }
+    console.log.element
     elementstyle = window.getComputedStyle(element)
     elementstyle.movementdirection = (elementstyle.getPropertyValue(movementdirection).replace("px","") + movementdistance) + "px"
     let elementheight = elementstyle.height.replace("px","")
