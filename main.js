@@ -86,7 +86,7 @@ addEventListener("keyup", function keyup(event) {
     console.log(keypressed)
 })
 
-if (keypresseddown === true) {
+while (keypresseddown === true) {
     console.log("keypresseddown === true")
     playermovement(keypressed)
 }
