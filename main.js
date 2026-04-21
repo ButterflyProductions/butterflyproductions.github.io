@@ -26,7 +26,6 @@ function move(element, direction, distance) {
     if(movementdirection === "up" || "left") {
         distance *= -1
     }
-    console.log.element
     elementstyle = window.getComputedStyle(element)
     elementstyle.movementdirection = (elementstyle.getPropertyValue(movementdirection).replace("px","") + movementdistance) + "px"
     let elementheight = elementstyle.height.replace("px","")
@@ -48,7 +47,6 @@ function move(element, direction, distance) {
 }
 
 function playermovement(whatkey) {
-    console.log(whatkey)
     if(whatkey === "ArrowRight" || "KeyD") {
         move(player, "right", 20)
     }
@@ -64,10 +62,12 @@ function playermovement(whatkey) {
 }
 
 // Code
-addEventListener("keydown", function keydown(event) {   
+addEventListener("keydown", function keydown(event) {  
+    event.preventDefault() 
     keypresseddown = true
     whatkey = event.code
     console.log(event.code)
+    console.log(whatkey)
 })
 addEventListener("keyup", function keyup(event) {
     keypresseddown = false
@@ -75,4 +75,3 @@ addEventListener("keyup", function keyup(event) {
 
 while (keypresseddown === true)
     playermovement(whatkey)
-    console.log(whatkey)
