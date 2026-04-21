@@ -7,21 +7,19 @@ Notes: I hope to fucking god this works.
 
 // Variables
 var player = document.getElementById("playerplaceholder");
-console.log(player)
 var gamescreen = document.getElementById("gameplaceholder");
-console.log(gamescreen)
 
 var playerID = "playerplaceholder";
 var gameID = "gameplaceholder";
 
 var gamebounds = gamescreen.getBoundingClientRect()
-console.log(gamebounds)
 
 var keypresseddown = false;
 var whatkey
 
 // ----------- Functions ----------- //
 function move(element, direction, distance) {
+    requestAnimationFrame(move(element, direction, distance))
     let rawdirection = direction
     let movementdirection = direction === "up" || "down" ? "top" : "left";
     let movementdistance = distance;
@@ -29,8 +27,6 @@ function move(element, direction, distance) {
         distance *= -1
     }
     elementstyle = window.getComputedStyle(element)
-    console.log(elementstyle)
-    console.log (elementstyle.height)
     elementstyle.movementdirection = (elementstyle.getPropertyValue(movementdirection).replace("px","") + movementdistance) + "px"
     let elementheight = elementstyle.height.replace("px","")
     let elementwidth = elementstyle.width.replace("px","")
