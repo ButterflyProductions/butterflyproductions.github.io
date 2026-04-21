@@ -73,4 +73,5 @@ player.addEventListener("keyup", function keyup(event) {
     keypresseddown = false
 })
 
-playermovement(whatkey)
+while (keypresseddown === true)
+    playermovement(whatkey)
