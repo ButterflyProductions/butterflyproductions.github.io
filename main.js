@@ -19,7 +19,7 @@ var whatkey
 
 // ----------- Functions ----------- //
 function move(element, direction, distance) {
-    requestAnimationFrame(move(element, direction, distance))
+    requestAnimationFrame(move)
     let rawdirection = direction
     let movementdirection = direction === "up" || "down" ? "top" : "left";
     let movementdistance = distance;
