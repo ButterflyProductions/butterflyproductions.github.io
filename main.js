@@ -70,11 +70,12 @@ function playermovement(whatkey) {
 
 // Code
 addEventListener("keydown", function keydown(event) {  
-    event.preventDefault() 
+    event.preventDefault(); 
     keypresseddown = true
     whatkey = event.code
     console.log(event.code)
     console.log(whatkey)
+    console.log(keypresseddown)
 })
 addEventListener("keyup", function keyup(event) {
     keypresseddown = false
