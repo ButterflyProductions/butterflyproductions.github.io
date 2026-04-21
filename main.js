@@ -54,22 +54,6 @@ function move(element, direction, distance) {
     requestAnimationFrame(move)
 }
 
-function playermovement(whatkey) {
-    console.log("playermovement activated")
-    if(whatkey === "ArrowRight" || "KeyD") {
-        move(player, "right", 20)
-    }
-    if(whatkey === "ArrowLeft" || "KeyA") {
-        move(player, "left", 20)
-    }
-    if(whatkey === "ArrowUp" || "KeyW") {
-        move(player, "up", 20)
-    }
-    if(whatkey === "ArrowDown" || "KeyS") {
-        move(player,"down", 20)
-    }
-}
-
 // Code
 addEventListener("keydown", function keydown(event) {  
     event.preventDefault(); 
@@ -86,7 +70,18 @@ addEventListener("keyup", function keyup(event) {
     console.log(keypressed)
 })
 
-while (keypresseddown === true) {
-    console.log("keypresseddown === true")
-    playermovement(keypressed)
+if(keypresseddown == true) {
+    console.log("it's activated afljakjdklsalkae")
+    if(keypresseddown === "ArrowRight" || "KeyD") {
+        move(player, "right", 20)
+    }
+    if(keypresseddown === "ArrowLeft" || "KeyA") {
+        move(player, "left", 20)
+    }
+    if(keypresseddown === "ArrowUp" || "KeyW") {
+        move(player, "up", 20)
+    }
+    if(keypresseddown === "ArrowDown" || "KeyS") {
+        move(player,"down", 20)
+    }
 }
