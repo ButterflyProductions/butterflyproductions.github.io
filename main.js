@@ -64,12 +64,12 @@ function playermovement(whatkey) {
 }
 
 // Code
-player.addEventListener("keydown", function keydown(event) {
+addEventListener("keydown", function keydown(event) {   
     keypresseddown = true
     whatkey = event.code
     console.log(event.code)
 })
-player.addEventListener("keyup", function keyup(event) {
+addEventListener("keyup", function keyup(event) {
     keypresseddown = false
 })
 
