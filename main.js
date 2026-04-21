@@ -15,7 +15,7 @@ var gameID = "gameplaceholder";
 var gamebounds = gamescreen.getBoundingClientRect()
 
 var keypresseddown = false;
-var whatkey
+var keypressed = ""
 
 // ----------- Functions ----------- //
 function move(element, direction, distance) {
@@ -74,16 +74,19 @@ function playermovement(whatkey) {
 addEventListener("keydown", function keydown(event) {  
     event.preventDefault(); 
     keypresseddown = true
-    whatkey = event.code
+    keypressed = event.code
     console.log(event.code)
-    console.log(whatkey)
+    console.log(keypressed)
     console.log(keypresseddown)
 })
 addEventListener("keyup", function keyup(event) {
     keypresseddown = false
+    keypressed = ""
     console.log(keypresseddown)
+    console.log(keypressed)
 })
 
 if (keypresseddown === true) {
-    playermovement(whatkey)
+    console.log("keypresseddown === true")
+    playermovement(keypressed)
 }
