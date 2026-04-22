@@ -23,16 +23,16 @@ addEventListener("keydown", function keydown(event) {
     keypressed = event.code
     console.log(event.code)
     console.log(keypressed)
-    if(keypresseddown === "ArrowRight" || "KeyD") {
+    if(keypressed === "ArrowRight" || "KeyD") {
         move(player, "right", 20)
     }
-    if(keypresseddown === "ArrowLeft" || "KeyA") {
+    if(keypressed === "ArrowLeft" || "KeyA") {
         move(player, "left", 20)
     }
-    if(keypresseddown === "ArrowUp" || "KeyW") {
+    if(keypressed === "ArrowUp" || "KeyW") {
         move(player, "up", 20)
     }
-    if(keypresseddown === "ArrowDown" || "KeyS") {
+    if(keypressed === "ArrowDown" || "KeyS") {
         move(player,"down", 20)
     }
 })
