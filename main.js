@@ -44,7 +44,9 @@ addEventListener("keyup", function keyup(event) {
 
 function move(element, direction, distance) {
     console.log("move activated!")
-    console.log (element)
+    console.log(element)
+    console.log(direction)
+    console.log(distance)
     let rawdirection = direction
     let movementdirection = direction === "up" || "down" ? "top" : "left";
     let movementdistance = distance;
