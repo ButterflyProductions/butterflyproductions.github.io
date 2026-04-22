@@ -8,15 +8,15 @@ Notes: I hope to fucking god this works.
 // Variables
 var player = document.getElementById("playerplaceholder");
 var gamescreen = document.getElementById("gameplaceholder");
-console.log(gamescreen)
 
-var playerID = "playerplaceholder";
-var gameID = "gameplaceholder";
+var playerstyle = window.getComputedStyle(player)
+var gamescreen = window.getComputedStyle(gamescreen)
 
 var gamebounds = gamescreen.getBoundingClientRect()
-console.log(gamebounds)
 
-var keypresseddown = false;
+var playerX = parseInt(playerstyle.getPropertyValue("left").replace("px",""))
+var playerY = parseInt(playerstyle.getPropertyValue("top").replace("px",""))
+
 var keypressed = ""
 
 // Code
@@ -26,16 +26,16 @@ addEventListener("keydown", function keydown(event) {
     console.log(event.code)
     console.log(keypressed)
     if(keypressed === "ArrowRight" || keypressed === "KeyD") {
-        move(player, "right", 20)
+        move(player, playerX, playerY, "right", 20)
     }
     if(keypressed === "ArrowLeft" || keypressed === "KeyA") {
-        move(player, "left", 20)
+        move(player, playerX, playerY, "left", 20)
     }
     if(keypressed === "ArrowUp" || keypressed === "KeyW") {
-        move(player, "up", 20)
+        move(player, playerX, playerY, "up", 20)
     }
     if(keypressed === "ArrowDown" || keypressed === "KeyS") {
-        move(player,"down", 20)
+        move(player, playerX, playerY, "down", 20)
     }
 })
 addEventListener("keyup", function keyup(event) {
@@ -44,7 +44,7 @@ addEventListener("keyup", function keyup(event) {
 })
 
 
-function move(element, direction, distance) {
+function move(element, elementX, elementY, direction, distance) {
     let rawdirection = direction
     if (direction === "up" || direction === "down") {
         movementdirection = "top"
@@ -53,33 +53,30 @@ function move(element, direction, distance) {
         movementdirection = "left"
     }
     let movementdistance = distance;
-    if(movementdirection === "up" || movementdirection === "left") {
+    if(rawdirection === "up" || rawdirection === "left") {
         distance *= -1
     }
-    elementstyle = window.getComputedStyle(element)
-    console.log(elementstyle)
-    elementstyle.movementdirection = (parseInt(elementstyle.getPropertyValue(movementdirection).replace("px","")) + parseInt(movementdistance)) + "px"
-    console.log(elementstyle.movementdirection)
-    console.log(elementstyle.getPropertyValue(movementdistance))
-    let elementheight = elementstyle.height.replace("px","")
-    let elementwidth = elementstyle.width.replace("px","")
- /*   if(elementstyle.getPropertyValue(movementdirection).replace("px","") < gamebounds.movementdirection) {
-        elementstyle.movementdirection.setPropertyValue(gamebounds.movementdirection)
-        console.log(elementstyle.movementdirection)
-    }
-    if(rawdirection === "down") {
-        rawdirection = "bottom"
-    }
-    if(elementstyle.getPropertyValue(movementdirection).replace("px","") > gamebounds.rawdirection) {
-        if(rawdirection === "bottom") {
-                    elementstyle.movementdirection.setPropertyValue(gamebounds.rawdirection - elementheight)
-                    console.log(elementstyle.movementdirection)
+    let elementheight = parseInt(element.style.height.replace("px",""))
+    let elementwidth = parseInt(element.style.width.replace("px",""))
+
+    if(movementdirection === "left") {
+        elementX = elementX + movementdistance
+        if (elementX < gamebounds.left) {
+            elementX = gamebounds.left
         }
-        else {
-            elementstyle.movementdirection.setPropertyValue(gamebounds.rawdirection - elementwidth)
-            console.log(elementstyle.movementdirection)
+        if (elementX > gamebounds.right) {
+            elementX = gamebounds.right - elementwidth
         }
     }
-    console.log(elementstyle.top)
-    console.log(elementstyle.left) */
+    else{
+        elementY = elementY + movementdistance
+        if (elementY <gamebounds.top) {
+            elementY = gamebounds.top
+        }
+        if (elemenY > gamebounds.bottom) {
+            elementY = gamebounds.bottom - elementheight
+        }
+    }
+    element.left = elementX
+    element.top = elementY
 }
