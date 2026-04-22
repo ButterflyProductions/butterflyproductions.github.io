@@ -10,7 +10,7 @@ var player = document.getElementById("playerplaceholder");
 var gamescreen = document.getElementById("gameplaceholder");
 
 var playerstyle = window.getComputedStyle(player)
-var gamescreen = window.getComputedStyle(gamescreen)
+var gamestyle = window.getComputedStyle(gamescreen)
 
 var gamebounds = gamescreen.getBoundingClientRect()
 
