@@ -45,10 +45,6 @@ addEventListener("keyup", function keyup(event) {
 
 
 function move(element, direction, distance) {
-    console.log("move activated!")
-    console.log(element)
-    console.log(direction)
-    console.log(distance)
     let rawdirection = direction
     if (direction === "up" || direction === "down") {
         movementdirection = "top"
@@ -57,26 +53,15 @@ function move(element, direction, distance) {
         movementdirection = "left"
     }
     let movementdistance = distance;
-    console.log(rawdirection)
-    console.log(movementdirection)
-    console.log(movementdistance)
     if(movementdirection === "up" || movementdirection === "left") {
         distance *= -1
     }
     elementstyle = window.getComputedStyle(element)
-    console.log(elementstyle)
-    console.log(gamebounds)
-    console.log(elementstyle.movementdirection)
-    console.log(elementstyle.getPropertyValue(movementdirection))
     elementstyle.movementdirection = (parseInt(elementstyle.getPropertyValue(movementdirection).replace("px","")) + parseInt(movementdistance)) + "px"
+    console.log(elementstyle.movementdirection)
+    console.log(elementstyle.getPropertyValue(movementdistance))
     let elementheight = elementstyle.height.replace("px","")
     let elementwidth = elementstyle.width.replace("px","")
-    console.log(elementheight)
-    console.log(elementwidth)
-    console.log(elementstyle.getPropertyValue(movementdirection))
-    console.log(elementstyle.movementdirection)
-    console.log(gamebounds.movementdirection)
-    console.log(gamebounds.rawdirection)
     if(elementstyle.getPropertyValue(movementdirection).replace("px","") < gamebounds.movementdirection) {
         elementstyle.movementdirection.setPropertyValue(gamebounds.movementdirection)
         console.log(elementstyle.movementdirection)
