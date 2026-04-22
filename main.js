@@ -82,5 +82,6 @@ function move(element, direction, distance) {
             elementstyle.movementdirection = gamebounds.rawdirection - elementwidth
         }
     }
-    console.log(elementstyle.movementdirection)
+    console.log(elementstyle.top)
+    console.log(elementstyle.left)
 }
