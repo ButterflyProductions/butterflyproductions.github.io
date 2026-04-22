@@ -74,6 +74,7 @@ function move(element, direction, distance) {
     console.log(gamebounds.rawdirection)
     if(elementstyle.getPropertyValue(movementdirection).replace("px","") < gamebounds.movementdirection) {
         elementstyle.movementdirection = gamebounds.movementdirection
+        console.log(elementstyle.movementdirection)
     }
     if(rawdirection === "down") {
         rawdirection = "bottom"
@@ -81,9 +82,11 @@ function move(element, direction, distance) {
     if(elementstyle.getPropertyValue(movementdirection).replace("px","") > gamebounds.rawdirection) {
         if(rawdirection === "bottom") {
                     elementstyle.movementdirection = gamebounds.rawdirection - elementheight
+                    console.log(elementstyle.movementdirection)
         }
         else {
             elementstyle.movementdirection = gamebounds.rawdirection - elementwidth
+            console.log(elementstyle.movementdirection)
         }
     }
     console.log(elementstyle.top)
