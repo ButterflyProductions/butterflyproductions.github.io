@@ -78,5 +78,4 @@ function move(element, direction, distance) {
         }
     }
     console.log(elementstyle.movementdirection)
-    requestAnimationFrame(move)
 }
