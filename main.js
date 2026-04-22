@@ -82,5 +82,4 @@ function move(element, direction, distance) {
     }
     console.log(elementstyle.top)
     console.log(elementstyle.left) */
-    requestAnimationFrame(move)
 }
