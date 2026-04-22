@@ -62,7 +62,7 @@ function move(element, direction, distance) {
     console.log(elementstyle.getPropertyValue(movementdistance))
     let elementheight = elementstyle.height.replace("px","")
     let elementwidth = elementstyle.width.replace("px","")
-    if(elementstyle.getPropertyValue(movementdirection).replace("px","") < gamebounds.movementdirection) {
+ /*   if(elementstyle.getPropertyValue(movementdirection).replace("px","") < gamebounds.movementdirection) {
         elementstyle.movementdirection.setPropertyValue(gamebounds.movementdirection)
         console.log(elementstyle.movementdirection)
     }
@@ -80,5 +80,5 @@ function move(element, direction, distance) {
         }
     }
     console.log(elementstyle.top)
-    console.log(elementstyle.left)
+    console.log(elementstyle.left) */
 }
