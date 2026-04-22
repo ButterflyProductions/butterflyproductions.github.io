@@ -48,7 +48,12 @@ function move(element, direction, distance) {
     console.log(direction)
     console.log(distance)
     let rawdirection = direction
-    let movementdirection = direction === "up" || "down" ? "top" : "left";
+    if (direction === "up" || "down") {
+        movementdirection = "top"
+    }
+    else {
+        movementdirection = "left"
+    }
     let movementdistance = distance;
     console.log(rawdirection)
     console.log(movementdirection)
