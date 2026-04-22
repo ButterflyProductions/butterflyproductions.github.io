@@ -23,16 +23,16 @@ addEventListener("keydown", function keydown(event) {
     keypressed = event.code
     console.log(event.code)
     console.log(keypressed)
-    if(keypressed === "ArrowRight" || "KeyD") {
+    if(keypressed === "ArrowRight" || keypressed === "KeyD") {
         move(player, "right", 20)
     }
-    if(keypressed === "ArrowLeft" || "KeyA") {
+    if(keypressed === "ArrowLeft" || keypressed === "KeyA") {
         move(player, "left", 20)
     }
-    if(keypressed === "ArrowUp" || "KeyW") {
+    if(keypressed === "ArrowUp" || keypressed === "KeyW") {
         move(player, "up", 20)
     }
-    if(keypressed === "ArrowDown" || "KeyS") {
+    if(keypressed === "ArrowDown" || keypressed === "KeyS") {
         move(player,"down", 20)
     }
 })
@@ -58,7 +58,7 @@ function move(element, direction, distance) {
     console.log(rawdirection)
     console.log(movementdirection)
     console.log(movementdistance)
-    if(movementdirection === "up" || "left") {
+    if(movementdirection === "up" || movementdirection === "left") {
         distance *= -1
     }
     elementstyle = window.getComputedStyle(element)
