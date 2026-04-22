@@ -64,6 +64,7 @@ function move(element, direction, distance) {
     elementstyle = window.getComputedStyle(element)
     console.log(elementstyle)
     elementstyle.movementdirection = (parseInt(elementstyle.getPropertyValue(movementdirection).replace("px","")) + parseInt(movementdistance)) + "px"
+    console.log(elementstyle.movementdirection)
     let elementheight = elementstyle.height.replace("px","")
     let elementwidth = elementstyle.width.replace("px","")
     console.log(elementheight)
