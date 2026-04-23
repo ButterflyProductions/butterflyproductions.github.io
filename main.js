@@ -58,7 +58,6 @@ function move(element, elementX, elementY, direction, distance) {
     }
     let elementheight = parseInt(element.style.height.replace("px",""))
     let elementwidth = parseInt(element.style.width.replace("px",""))
-
     if(movementdirection === "left") {
         elementX = elementX + movementdistance
         if (elementX < gamebounds.left) {
@@ -67,6 +66,9 @@ function move(element, elementX, elementY, direction, distance) {
         if (elementX > gamebounds.right) {
             elementX = gamebounds.right - elementwidth
         }
+        console.log(elementX)
+        console.log(gamebounds.left)
+        console.log(gamebounds.right)
     }
     else{
         elementY = elementY + movementdistance
@@ -76,7 +78,14 @@ function move(element, elementX, elementY, direction, distance) {
         if (elementY > gamebounds.bottom) {
             elementY = gamebounds.bottom - elementheight
         }
+        console.log(elementY)
+        console.log(gamebounds.top)
+        console.log(gamebounds.bottom)
     }
     element.left = elementX
     element.top = elementY
+    console.log(elementX)
+    console.log(element.left)
+    console.log(elementY)
+    console.log(element.top)
 }
