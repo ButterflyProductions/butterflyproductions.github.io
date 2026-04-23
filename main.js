@@ -14,8 +14,8 @@ var gamestyle = window.getComputedStyle(gamescreen)
 
 var gamebounds = gamescreen.getBoundingClientRect()
 
-var playerX = 64
-var playerY = 64
+var playerX = 500
+var playerY = 500
 
 var keypresseddown = false
 var keypressed = ""
