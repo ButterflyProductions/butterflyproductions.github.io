@@ -97,4 +97,6 @@ function move(element, elementX, elementY, direction, distance) {
     console.log(element.style.top)
     elementX = element.style.left
     elementY = element.style.top
+    console.log(elementX)
+    console.log(elementY)
 }
