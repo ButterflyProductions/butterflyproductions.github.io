@@ -14,8 +14,8 @@ var gamestyle = window.getComputedStyle(gamescreen)
 
 var gamebounds = gamescreen.getBoundingClientRect()
 
-var playerX = parseInt(playerstyle.getPropertyValue("left").replace("px",""))
-var playerY = parseInt(playerstyle.getPropertyValue("top").replace("px",""))
+var playerX = 64
+var playerY = 64
 
 var keypresseddown = false
 var keypressed = ""
@@ -66,11 +66,11 @@ function move(element, elementX, elementY, direction, distance) {
     let elementheight = parseInt(element.style.height.replace("px",""))
     let elementwidth = parseInt(element.style.width.replace("px",""))
     if(movementdirection === "left") {
-        elementX += elementX + movementdistance
+        elementX = elementX + movementdistance
         if (elementX < gamebounds.left) {
             elementX = gamebounds.left
         }
-        if (elementX > gamebounds.right) {
+        if (elementX + elementwidth > gamebounds.right) {
             elementX = gamebounds.right - elementwidth
         }
         console.log(elementX)
@@ -78,11 +78,11 @@ function move(element, elementX, elementY, direction, distance) {
         console.log(gamebounds.right)
     }
     else{
-        elementY += elementY + movementdistance
+        elementY = elementY + movementdistance
         if (elementY <gamebounds.top) {
             elementY = gamebounds.top
         }
-        if (elementY > gamebounds.bottom) {
+        if (elementY + elementheight > gamebounds.bottom) {
             elementY = gamebounds.bottom - elementheight
         }
         console.log(elementY)
