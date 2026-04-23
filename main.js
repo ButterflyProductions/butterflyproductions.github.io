@@ -89,24 +89,10 @@ function move(element, elementX, elementY, direction, distance) {
         console.log(gamebounds.top)
         console.log(gamebounds.bottom) */
     }
-    element.style.left.setPropertyValue(elementX + "px")
-    element.style.top.setPropertyValue(elementY + "px")
+    element.style.left = elementX + "px"
+    element.style.top = elementY + "px"
     console.log(elementX)
     console.log(element.style.left)
     console.log(elementY)
     console.log(element.style.top)
 }
-
-
-    if(keypressed === "ArrowRight" || keypressed === "KeyD") {
-        move(player, playerX, playerY, "right", 20)
-    }
-    if(keypressed === "ArrowLeft" || keypressed === "KeyA") {
-        move(player, playerX, playerY, "left", 20)
-    }
-    if(keypressed === "ArrowUp" || keypressed === "KeyW") {
-        move(player, playerX, playerY, "up", 20)
-    }
-    if(keypressed === "ArrowDown" || keypressed === "KeyS") {
-        move(player, playerX, playerY, "down", 20)
-    }
