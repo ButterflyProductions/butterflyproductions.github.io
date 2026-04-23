@@ -27,6 +27,7 @@ addEventListener("keydown", function keydown(event) {
     keypressed = event.code
     console.log(event.code)
     console.log(keypressed)
+    console.log(keypresseddown)
 })
 addEventListener("keyup", function keyup(event) {
     keypresseddown = false
@@ -94,6 +95,10 @@ function move(element, elementX, elementY, direction, distance) {
     elementY = element.style.top
     console.log(elementX)
     console.log(elementY)
+}
+
+if (keypresseddown === true){
+    console.log("keypressed")
 }
 
 if (keypresseddown === true) {
