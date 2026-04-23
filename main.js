@@ -105,4 +105,5 @@ function move(element, elementX, elementY, direction, distance) {
     elementY = element.style.top
     console.log(elementX)
     console.log(elementY)
+    console.log("looped")
 }
