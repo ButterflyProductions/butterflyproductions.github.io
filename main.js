@@ -17,32 +17,22 @@ var gamebounds = gamescreen.getBoundingClientRect()
 var playerX = parseInt(playerstyle.getPropertyValue("left").replace("px",""))
 var playerY = parseInt(playerstyle.getPropertyValue("top").replace("px",""))
 
+var keypresseddown = false
 var keypressed = ""
 
 // Code
 addEventListener("keydown", function keydown(event) {  
     event.preventDefault(); 
+    keypresseddown = true
     keypressed = event.code
     console.log(event.code)
     console.log(keypressed)
-    if(keypressed === "ArrowRight" || keypressed === "KeyD") {
-        move(player, playerX, playerY, "right", 20)
-    }
-    if(keypressed === "ArrowLeft" || keypressed === "KeyA") {
-        move(player, playerX, playerY, "left", 20)
-    }
-    if(keypressed === "ArrowUp" || keypressed === "KeyW") {
-        move(player, playerX, playerY, "up", 20)
-    }
-    if(keypressed === "ArrowDown" || keypressed === "KeyS") {
-        move(player, playerX, playerY, "down", 20)
-    }
 })
 addEventListener("keyup", function keyup(event) {
+    keypresseddown = false
     keypressed = ""
     console.log(keypressed)
 })
-
 
 function move(element, elementX, elementY, direction, distance) {
     let rawdirection = direction
@@ -54,8 +44,13 @@ function move(element, elementX, elementY, direction, distance) {
     }
     let movementdistance = distance;
     if(rawdirection === "up" || rawdirection === "left") {
-        distance *= -1
+        movementdistance *= -1
     }
+    console.log(rawdirection)
+    console.log(movementdirection)
+    console.log(movementdistance)
+    console.log(elementX)
+    console.log(elementY)
     let elementheight = parseInt(element.style.height.replace("px",""))
     let elementwidth = parseInt(element.style.width.replace("px",""))
     if(movementdirection === "left") {
@@ -82,10 +77,25 @@ function move(element, elementX, elementY, direction, distance) {
         console.log(gamebounds.top)
         console.log(gamebounds.bottom) */
     }
-    element.style.left = elementX + "px"
-    element.style.top = elementY + "px"
+    element.style.left.setPropertyValue(elementX + "px")
+    element.style.top.setPropertyValue(elementY + "px")
     console.log(elementX)
     console.log(element.style.left)
     console.log(elementY)
     console.log(element.style.top)
+}
+
+if(keypresseddown === true) {
+    if(keypressed === "ArrowRight" || keypressed === "KeyD") {
+        move(player, playerX, playerY, "right", 20)
+    }
+    if(keypressed === "ArrowLeft" || keypressed === "KeyA") {
+        move(player, playerX, playerY, "left", 20)
+    }
+    if(keypressed === "ArrowUp" || keypressed === "KeyW") {
+        move(player, playerX, playerY, "up", 20)
+    }
+    if(keypressed === "ArrowDown" || keypressed === "KeyS") {
+        move(player, playerX, playerY, "down", 20)
+    }
 }
