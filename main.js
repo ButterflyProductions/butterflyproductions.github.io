@@ -73,7 +73,7 @@ function move(element, elementX, elementY, direction, distance) {
         if (elementY <gamebounds.top) {
             elementY = gamebounds.top
         }
-        if (elemenY > gamebounds.bottom) {
+        if (elementY > gamebounds.bottom) {
             elementY = gamebounds.bottom - elementheight
         }
     }
