@@ -82,7 +82,7 @@ function move(element, elementX, elementY, direction, distance) {
         console.log(gamebounds.top)
         console.log(gamebounds.bottom)
     }
-    element.left = elementX +"px"
+    element.left = elementX + "px"
     element.top = elementY + "px"
     console.log(elementX)
     console.log(element.left)
