@@ -25,8 +25,8 @@ body {
 }
 
 #playerplaceholder {
-  height: 50px;
-  width: 50px;
+  height: 64px;
+  width: 64px;
   position: absolute;
   top: 500px;
   left: 500px;
