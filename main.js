@@ -81,7 +81,6 @@ function pressup(direction){
 function move(element, elementX, elementY, distance) {
     let positionX = elementX
     let positionY = elementY
-    let movementdirection = direction
     let movementdistance = distance
     while(moveup === true){
         playerY += -(distance)
