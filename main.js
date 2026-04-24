@@ -50,6 +50,8 @@ addEventListener("keyup", function keyup(event) {
 function move(element, direction, distance) {
     elementY = element.style.top.replace("px","")
     elementX = element.style.left.replace("px","")
+    console.log(elementX)
+    console.log(elementY)
     console.log(keypresseddown)
     let rawdirection = direction
     if (direction === "up" || direction === "down") {
