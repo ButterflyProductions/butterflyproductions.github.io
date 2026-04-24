@@ -29,22 +29,22 @@ addEventListener("keydown", function keydown(event) {
     console.log(keypressed)
     console.log(keypresseddown)
     if(keypressed === "ArrowRight" || keypressed === "KeyD") {
-        playerX += 1
+        playerX += 5
         player.style.left = playerX
         // move(player, playerX, playerY, "right", 20)
     }
     if(keypressed === "ArrowLeft" || keypressed === "KeyA") {
-        playerX += -1
+        playerX += -5
         player.style.left = playerX
         // move(player, playerX, playerY, "left", 20)
     }
     if(keypressed === "ArrowUp" || keypressed === "KeyW") {
-        playerY += -1
+        playerY += -5
         player.style.top = playerY
         // move(player, playerX, playerY, "up", 20)
     }
     if(keypressed === "ArrowDown" || keypressed === "KeyS") {
-        playerY += 1
+        playerY += 5
         player.style.top = playerY
         // move(player, playerX, playerY, "down", 20)
     }
