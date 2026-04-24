@@ -48,8 +48,6 @@ addEventListener("keyup", function keyup(event) {
 })
 
 function move(element, direction, distance) {
-    elementY = element.style.top.replace("px","")
-    elementX = element.style.left.replace("px","")
     console.log(elementX)
     console.log(elementY)
     console.log(keypresseddown)
@@ -107,8 +105,6 @@ function move(element, direction, distance) {
     console.log(element.style.left)
     console.log(elementY)
     console.log(element.style.top)
-    elementX = element.style.left.replace("px","")
-    elementY = element.style.top.replace("px","")
     console.log(elementX)
     console.log(elementY)
 }
