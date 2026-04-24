@@ -28,14 +28,20 @@ addEventListener("keydown", function keydown(event) {
     console.log(event.code)
     console.log(keypressed)
     console.log(keypresseddown)
-    if (event.code === "ArrowUp" || event.code === "KeyW")
-        move(player, playerX, playerY, "up", 5)
-    if (event.code === "ArrowLeft" || event.code === "KeyA")
-        move(player, playerX, playerY, "left", 5)
-    if (event.code === "ArrowDown" || event.code === "KeyS")
-        move(player, playerX, playerY, "down", 5)
-    if (event.code === "ArrowRight" || event.code === "KeyD")
-        move(player, playerX, playerY, "right", 5)
+    if (event.code === "ArrowUp" || event.code === "KeyW"){
+        playerY = move(player, playerX, playerY, "up", 5)
+    }
+    if (event.code === "ArrowLeft" || event.code === "KeyA"){
+        playerX = move(player, playerX, playerY, "left", 5)
+    }
+    if (event.code === "ArrowDown" || event.code === "KeyS"){
+        playerY = move(player, playerX, playerY, "down", 5)
+    }
+    if (event.code === "ArrowRight" || event.code === "KeyD"){
+        playerX = move(player, playerX, playerY, "right", 5)
+    }
+    player.style.top = playerY
+    player.style.left = playerX
 })
 addEventListener("keyup", function keyup(event) {
     keypresseddown = false
@@ -58,11 +64,11 @@ function move(element, elementX, elementY, direction, distance) {
         }
         if(movementdirection === "up" || movementdirection === "down"){
             positionY += movementdistance
+            return positionY
         }
         else{
             positionX += movementdistance
+            return positionX
         }
-        element.style.top = positionY
-        element.style.left = positionX
     }
 }
