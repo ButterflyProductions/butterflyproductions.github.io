@@ -29,16 +29,16 @@ addEventListener("keydown", function keydown(event) {
     console.log(keypressed)
     console.log(keypresseddown)
     if(keypressed === "ArrowRight" || keypressed === "KeyD") {
-        move(player, "right", 20)
+        move(player, playerX, playerY, "right", 20)
     }
     if(keypressed === "ArrowLeft" || keypressed === "KeyA") {
-        move(player, "left", 20)
+        move(player, playerX, playerY, "left", 20)
     }
     if(keypressed === "ArrowUp" || keypressed === "KeyW") {
-        move(player, "up", 20)
+        move(player, playerX, playerY, "up", 20)
     }
     if(keypressed === "ArrowDown" || keypressed === "KeyS") {
-        move(player, "down", 20)
+        move(player, playerX, playerY, "down", 20)
     }
 })
 addEventListener("keyup", function keyup(event) {
@@ -47,10 +47,7 @@ addEventListener("keyup", function keyup(event) {
     console.log(keypressed)
 })
 
-function move(element, direction, distance) {
-    console.log(elementX)
-    console.log(elementY)
-    console.log(keypresseddown)
+function move(element, elementX, elementY, direction, distance) {
     let rawdirection = direction
     if (direction === "up" || direction === "down") {
         movementdirection = "top"
@@ -65,8 +62,6 @@ function move(element, direction, distance) {
     console.log(rawdirection)
     console.log(movementdirection)
     console.log(movementdistance)
-    console.log(elementX)
-    console.log(elementY)
     let elementheight = parseInt(element.style.height.replace("px",""))
     let elementwidth = parseInt(element.style.width.replace("px",""))
     if(movementdirection === "left") {
