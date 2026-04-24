@@ -29,7 +29,6 @@ addEventListener("keydown", function keydown(event) {
     keypressed = event.code
     console.log(event.code)
     console.log(keypressed)
-    console.log(keypresseddown)
     if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
         pressdown(moveup)
         playerY = move(player, playerX, playerY, "up", 5)
