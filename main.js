@@ -28,26 +28,14 @@ addEventListener("keydown", function keydown(event) {
     console.log(event.code)
     console.log(keypressed)
     console.log(keypresseddown)
-    if(keypressed === "ArrowRight" || keypressed === "KeyD") {
-        playerX += 5
-        player.style.left = playerX
-        // move(player, playerX, playerY, "right", 20)
-    }
-    if(keypressed === "ArrowLeft" || keypressed === "KeyA") {
-        playerX += -5
-        player.style.left = playerX
-        // move(player, playerX, playerY, "left", 20)
-    }
-    if(keypressed === "ArrowUp" || keypressed === "KeyW") {
-        playerY += -5
-        player.style.top = playerY
-        // move(player, playerX, playerY, "up", 20)
-    }
-    if(keypressed === "ArrowDown" || keypressed === "KeyS") {
-        playerY += 5
-        player.style.top = playerY
-        // move(player, playerX, playerY, "down", 20)
-    }
+    if (event.code === "ArrowUp" || event.code === "KeyW")
+        move(player, playerX, playerY, "up", 5)
+    if (event.code === "ArrowLeft" || event.code === "KeyA")
+        move(player, playerX, playerY, "left", 5)
+    if (event.code === "ArrowDown" || event.code === "KeyS")
+        move(player, playerX, playerY, "down", 5)
+    if (event.code === "ArrowRight" || event.code === "KeyD")
+        move(player, playerX, playerY, "right", 5)
 })
 addEventListener("keyup", function keyup(event) {
     keypresseddown = false
@@ -55,59 +43,26 @@ addEventListener("keyup", function keyup(event) {
     console.log(keypressed)
 })
 
-/*function move(element, elementX, elementY, direction, distance) {
-    let rawdirection = direction
-    if (direction === "up" || direction === "down") {
-        movementdirection = "top"
-    }
-    else {
-        movementdirection = "left"
-    }
-    let movementdistance = distance;
-    if(rawdirection === "up" || rawdirection === "left") {
-        movementdistance *= -1
-    }
-    console.log(rawdirection)
-    console.log(movementdirection)
-    console.log(movementdistance)
-    let elementheight = parseInt(element.style.height.replace("px",""))
-    let elementwidth = parseInt(element.style.width.replace("px",""))
-    if(movementdirection === "left") {
-        elementX = elementX + movementdistance
-        console.log(elementX)
-        if (elementX < gamebounds.left) {
-            elementX = gamebounds.left
-            console.log(elementX)
+if(keypresseddown === true){
+    console.log("keypressed!")
+}
+
+function move(element, elementX, elementY, direction, distance) {
+    let positionX = elementX
+    let positionY = elementY
+    let movementdirection = direction
+    let movementdistance = distance
+    if (keypresseddown === true){
+        if(movementdirection === "up" || movementdirection === "left"){
+            movementdistance *= -1
         }
-        if ((elementX + elementwidth) > gamebounds.right) {
-            elementX = gamebounds.right - elementwidth
-            console.log(elementX)
+        if(movementdirection === "up" || movementdirection === "down"){
+            positionY += movementdistance
         }
-        console.log(elementX)
-        console.log(gamebounds.left)
-        console.log(gamebounds.right)
+        else{
+            positionX += movementdistance
+        }
+        element.style.top = positionY
+        element.style.left = positionX
     }
-    else{
-        elementY = elementY + movementdistance
-        console.log(elementY)
-        if (elementY < gamebounds.top) {
-            elementY = gamebounds.top
-            console.log(elementY)
-        }
-        if ((elementY + elementheight) > gamebounds.bottom) {
-            elementY = gamebounds.bottom - elementheight
-            console.log(elementY)
-        }
-        console.log(elementY)
-        console.log(gamebounds.top)
-        console.log(gamebounds.bottom) 
-    }
-    element.style.left = elementX + "px"
-    element.style.top = elementY + "px"
-    console.log(elementX)
-    console.log(element.style.left)
-    console.log(elementY)
-    console.log(element.style.top)
-    console.log(elementX)
-    console.log(elementY)
-} */
+}
