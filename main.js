@@ -17,58 +17,87 @@ var gamebounds = gamescreen.getBoundingClientRect()
 var playerX = 500
 var playerY = 500
 
-var keypresseddown = false
+var moveup = false
+var moveleft = false
+var movedown = false
+var moveright = false
 var keypressed = ""
 
 // Code
 addEventListener("keydown", function keydown(event) {  
     event.preventDefault(); 
-    keypresseddown = true
     keypressed = event.code
     console.log(event.code)
     console.log(keypressed)
     console.log(keypresseddown)
-    if (event.code === "ArrowUp" || event.code === "KeyW"){
+    if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
+        pressdown(moveup)
         playerY = move(player, playerX, playerY, "up", 5)
     }
-    if (event.code === "ArrowLeft" || event.code === "KeyA"){
+    if (keypressed === "ArrowLeft" || keypressed === "KeyA"){
+        pressdown(moveleft)
         playerX = move(player, playerX, playerY, "left", 5)
     }
-    if (event.code === "ArrowDown" || event.code === "KeyS"){
+    if (keypressed === "ArrowDown" || keypressed === "KeyS"){
+        pressdown(movedown)
         playerY = move(player, playerX, playerY, "down", 5)
     }
-    if (event.code === "ArrowRight" || event.code === "KeyD"){
+    if (keypressed === "ArrowRight" || keypressed === "KeyD"){
+        pressdown(moveright)
         playerX = move(player, playerX, playerY, "right", 5)
     }
     player.style.top = playerY
     player.style.left = playerX
 })
 addEventListener("keyup", function keyup(event) {
-    keypresseddown = false
     keypressed = ""
     console.log(keypressed)
+    if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
+        pressup(moveup)
+        playerY = move(player, playerX, playerY, 5)
+    }
+    if (keypressed === "ArrowLeft" || keypressed === "KeyA"){
+        pressup(moveleft)
+        playerX = move(player, playerX, playerY, "left", 5)
+    }
+    if (keypressed === "ArrowDown" || keypressed === "KeyS"){
+        pressup(movedown)
+        playerY = move(player, playerX, playerY, "down", 5)
+    }
+    if (keypressed === "ArrowRight" || keypressed === "KeyD"){
+        pressup(moveright)
+        playerX = move(player, playerX, playerY, "right", 5)
+    }
 })
 
-if(keypresseddown === true){
-    console.log("keypressed!")
+function pressdown(direction){
+    direction = true
 }
 
-function move(element, elementX, elementY, direction, distance) {
+function pressup(direction){
+    direction = false
+}
+
+
+function move(element, elementX, elementY, distance) {
     let positionX = elementX
     let positionY = elementY
     let movementdirection = direction
     let movementdistance = distance
-    if (keypresseddown === true){
-        if(movementdirection === "up" || movementdirection === "left"){
-            movementdistance *= -1
-        }
-        if(movementdirection === "up" || movementdirection === "down"){
-            positionY += movementdistance
-            return positionY
-        }
-        else{
-            positionX += movementdistance
-            return positionX
-        }
+    while(moveup === true){
+        playerY += -(distance)
+        return playerY
+    }
+    while(moveleft === true){
+        playerX += -(distance)
+        return playerX
+    }
+    while(movedown === true){
+        playerY += distance
+        return playerY
+    }
+    while(moveright === true){
+        playerX += distance
+        return playerX
     }
 }
