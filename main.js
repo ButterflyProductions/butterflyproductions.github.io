@@ -30,6 +30,7 @@ addEventListener("keydown", function keydown(event) {
     console.log(event.code)
     console.log(keypressed)
     if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
+        console.log("up!")
         pressdown(moveup)
         playerY = move(player, playerX, playerY, "up", 5)
     }
@@ -79,6 +80,7 @@ function pressup(direction){
 
 
 function move(element, elementX, elementY, distance) {
+    console.log("You're in!")
     let positionX = elementX
     let positionY = elementY
     let movementdistance = distance
