@@ -33,19 +33,19 @@ addEventListener("keydown", function keydown(event) {
     console.log(keypressed)
     if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
         console.log("up!")
-        pressdown(keypresseddown.moveup())
+        pressdown(keypresseddown.moveup)
         playerY = move(player, playerX, playerY, "up", 5)
     }
     if (keypressed === "ArrowLeft" || keypressed === "KeyA"){
-        pressdown(keypresseddown.moveleft())
+        pressdown(keypresseddown.moveleft)
         playerX = move(player, playerX, playerY, "left", 5)
     }
     if (keypressed === "ArrowDown" || keypressed === "KeyS"){
-        pressdown(keypresseddown.movedown())
+        pressdown(keypresseddown.movedown)
         playerY = move(player, playerX, playerY, "down", 5)
     }
     if (keypressed === "ArrowRight" || keypressed === "KeyD"){
-        pressdown(keypresseddown.moveright())
+        pressdown(keypresseddown.moveright)
         playerX = move(player, playerX, playerY, "right", 5)
     }
     player.style.top = playerY
@@ -55,19 +55,19 @@ addEventListener("keyup", function keyup(event) {
     keypressed = ""
     console.log(keypressed)
     if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
-        pressup(keypresseddown.moveup())
+        pressup(keypresseddown.moveup)
         playerY = move(player, playerX, playerY, 5)
     }
     if (keypressed === "ArrowLeft" || keypressed === "KeyA"){
-        pressup(keypresseddown.moveleft())
+        pressup(keypresseddown.moveleft)
         playerX = move(player, playerX, playerY, "left", 5)
     }
     if (keypressed === "ArrowDown" || keypressed === "KeyS"){
-        pressup(keypresseddown.movedown())
+        pressup(keypresseddown.movedown)
         playerY = move(player, playerX, playerY, "down", 5)
     }
     if (keypressed === "ArrowRight" || keypressed === "KeyD"){
-        pressup(keypresseddown.moveup())
+        pressup(keypresseddown.moveup)
         playerX = move(player, playerX, playerY, "right", 5)
     }
 })
@@ -87,19 +87,19 @@ function move(element, elementX, elementY, distance) {
     let positionX = elementX
     let positionY = elementY
     let movementdistance = distance
-    while(keypresseddown.moveup() === true){
+    while(keypresseddown.moveup === true){
         playerY += -(distance)
         return playerY
     }
-    while(keypresseddown.moveleft() === true){
+    while(keypresseddown.moveleft === true){
         playerX += -(distance)
         return playerX
     }
-    while(keypresseddown.movedown() === true){
+    while(keypresseddown.movedown === true){
         playerY += distance
         return playerY
     }
-    while(keypresseddown.moveright() === true){
+    while(keypresseddown.moveright === true){
         playerX += distance
         return playerX
     }
