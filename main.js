@@ -5,8 +5,36 @@ Project Author: ButterflyProductions
 Notes: I hope to fucking god this works. 
 */
 
+// Classes
+class Box {
+    constructor(height, width, startposX, startposY, ID){
+        this.height = height
+        this.width = width
+        this.posX = startposX
+        this.posY = startposY
+        this.ID = ID
+    }
+
+    // Variables
+    movementspeed = 0 //most objects won't need to move, but this will be useful for cutscenes
+
+}
+
+class Player extends Box {
+    constructor(){
+        super(64, 64, 500, 500, document.getElementById("playerplaceholder"))
+    }
+    keypresseddown = {
+    moveup: false,
+    moveleft: false,
+    movedown: false,
+    moveright: false
+    }
+}
+
+
 // Variables
-var player = document.getElementById("playerplaceholder");
+const player = new Box(64, 64, 500, 500, document.getElementById("playerplaceholder"))
 var gamescreen = document.getElementById("gameplaceholder");
 
 var playerstyle = window.getComputedStyle(player)
@@ -17,15 +45,10 @@ var gamebounds = gamescreen.getBoundingClientRect()
 var playerX = 500
 var playerY = 500
 
-const keypresseddown = {
-    moveup: false,
-    moveleft: false,
-    movedown: false,
-    moveright: false
-}
 var keypressed = ""
 
 // Code
+
 addEventListener("keydown", function keydown(event) {  
     event.preventDefault(); 
     keypressed = event.code
