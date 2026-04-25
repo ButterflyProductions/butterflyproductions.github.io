@@ -72,6 +72,7 @@ addEventListener("keyup", function keyup(event) {
 
 function pressdown(direction){
     direction = true
+    console.log("Over here!")
 }
 
 function pressup(direction){
@@ -81,6 +82,7 @@ function pressup(direction){
 
 function move(element, elementX, elementY, distance) {
     console.log("You're in!")
+    console.log(moveup)
     let positionX = elementX
     let positionY = elementY
     let movementdistance = distance
