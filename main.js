@@ -18,6 +18,23 @@ class Box {
     // Variables
     movementspeed = 0 //most objects won't need to move, but this will be useful for cutscenes
 
+    animationFrameID = null
+
+    move(){
+        this.update()
+    }
+
+    update(){
+        this.animationFrameID = requestAnimationFrame(() => this.update())
+    }
+
+    stop(){
+        if (this.animationFrameID !== null){
+            cancelAnimationFrame(this.animationFrameID);
+            this.animationFrameID = null
+        }
+    }
+
 }
 
 class Player extends Box {
@@ -57,6 +74,7 @@ addEventListener("keydown", function keydown(event) {
     if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
         console.log("up!")
         pressdown(keypresseddown.moveup)
+        console.log(keypresseddown.moveup)
         playerY = move(player, playerX, playerY, "up", 5)
     }
     if (keypressed === "ArrowLeft" || keypressed === "KeyA"){
