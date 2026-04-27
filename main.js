@@ -54,7 +54,6 @@ class Player extends Box {
 const player = new Box(64, 64, 500, 500, document.getElementById("playerplaceholder"))
 var gamescreen = document.getElementById("gameplaceholder");
 
-var playerstyle = window.getComputedStyle(player)
 var gamestyle = window.getComputedStyle(gamescreen)
 
 var gamebounds = gamescreen.getBoundingClientRect()
