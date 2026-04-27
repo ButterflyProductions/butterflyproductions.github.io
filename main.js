@@ -72,20 +72,20 @@ addEventListener("keydown", function keydown(event) {
     console.log(keypressed)
     if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
         console.log("up!")
-        pressdown(keypresseddown.moveup)
+        pressdown(player.keypresseddown.moveup)
         console.log(keypresseddown.moveup)
         playerY = move(player, playerX, playerY, "up", 5)
     }
     if (keypressed === "ArrowLeft" || keypressed === "KeyA"){
-        pressdown(keypresseddown.moveleft)
+        pressdown(player.keypresseddown.moveleft)
         playerX = move(player, playerX, playerY, "left", 5)
     }
     if (keypressed === "ArrowDown" || keypressed === "KeyS"){
-        pressdown(keypresseddown.movedown)
+        pressdown(player.keypresseddown.movedown)
         playerY = move(player, playerX, playerY, "down", 5)
     }
     if (keypressed === "ArrowRight" || keypressed === "KeyD"){
-        pressdown(keypresseddown.moveright)
+        pressdown(player.keypresseddown.moveright)
         playerX = move(player, playerX, playerY, "right", 5)
     }
     player.style.top = playerY
@@ -95,19 +95,19 @@ addEventListener("keyup", function keyup(event) {
     keypressed = ""
     console.log(keypressed)
     if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
-        pressup(keypresseddown.moveup)
+        pressup(player.keypresseddown.moveup)
         playerY = move(player, playerX, playerY, 5)
     }
     if (keypressed === "ArrowLeft" || keypressed === "KeyA"){
-        pressup(keypresseddown.moveleft)
+        pressup(player.keypresseddown.moveleft)
         playerX = move(player, playerX, playerY, "left", 5)
     }
     if (keypressed === "ArrowDown" || keypressed === "KeyS"){
-        pressup(keypresseddown.movedown)
+        pressup(player.keypresseddown.movedown)
         playerY = move(player, playerX, playerY, "down", 5)
     }
     if (keypressed === "ArrowRight" || keypressed === "KeyD"){
-        pressup(keypresseddown.moveup)
+        pressup(player.keypresseddown.moveup)
         playerX = move(player, playerX, playerY, "right", 5)
     }
 })
