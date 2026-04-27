@@ -65,7 +65,7 @@ var keypressed = ""
 
 // Code
 
-console.log(player.keypresseddown.moveup())
+console.log(player.keypresseddown.moveup)
 
 addEventListener("keydown", function keydown(event) {  
     event.preventDefault(); 
