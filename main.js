@@ -129,19 +129,19 @@ function move(element, elementX, elementY, distance) {
     let positionX = elementX
     let positionY = elementY
     let movementdistance = distance
-    while(keypresseddown.moveup === true){
+    while(player.keypresseddown.moveup === true){
         playerY += -(distance)
         return playerY
     }
-    while(keypresseddown.moveleft === true){
+    while(player.keypresseddown.moveleft === true){
         playerX += -(distance)
         return playerX
     }
-    while(keypresseddown.movedown === true){
+    while(player.keypresseddown.movedown === true){
         playerY += distance
         return playerY
     }
-    while(keypresseddown.moveright === true){
+    while(player.keypresseddown.moveright === true){
         playerX += distance
         return playerX
     }
