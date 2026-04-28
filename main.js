@@ -75,7 +75,7 @@ addEventListener("keydown", function keydown(event) {
     if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
         console.log("up!")
         pressdown(player.keypresseddown.moveup)
-        console.log(keypresseddown.moveup)
+        console.log(player.keypresseddown.moveup)
         playerY = move(player, playerX, playerY, "up", 5)
     }
     if (keypressed === "ArrowLeft" || keypressed === "KeyA"){
