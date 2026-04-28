@@ -51,7 +51,7 @@ class Player extends Box {
 
 
 // Variables
-const player = new Box(64, 64, 500, 500, document.getElementById("playerplaceholder"))
+const player = new Player()
 var gamescreen = document.getElementById("gameplaceholder");
 
 var gamestyle = window.getComputedStyle(gamescreen)
