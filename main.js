@@ -51,8 +51,9 @@ class Player extends Box {
 
 
 // Variables
-const player = new Player()
-var gamescreen = document.getElementById("gameplaceholder");
+const player = new Player();
+const playername = document.getElementById("playerplaceholder");
+const gamescreen = document.getElementById("gameplaceholder");
 
 var gamestyle = window.getComputedStyle(gamescreen)
 
@@ -90,8 +91,8 @@ addEventListener("keydown", function keydown(event) {
         pressdown(player.keypresseddown.moveright)
         playerX = move(player, playerX, playerY, "right", 5)
     }
-    player.style.top = playerY
-    player.style.left = playerX
+    playername.style.top = playerY
+    playername.style.left = playerX
 })
 addEventListener("keyup", function keyup(event) {
     keypressed = ""
