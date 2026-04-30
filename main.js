@@ -75,20 +75,20 @@ addEventListener("keydown", function keydown(event) {
     console.log(keypressed)
     if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
         console.log("up!")
-        pressdown(player.keypresseddown.moveup)
+        player.keypresseddown.moveup = true
         console.log(player.keypresseddown.moveup)
         playerY = move(player, playerX, playerY, "up", 5)
     }
     if (keypressed === "ArrowLeft" || keypressed === "KeyA"){
-        pressdown(player.keypresseddown.moveleft)
+        player.keypresseddown.moveleft = true
         playerX = move(player, playerX, playerY, "left", 5)
     }
     if (keypressed === "ArrowDown" || keypressed === "KeyS"){
-        pressdown(player.keypresseddown.movedown)
+        player.keypresseddown.movedown = true
         playerY = move(player, playerX, playerY, "down", 5)
     }
     if (keypressed === "ArrowRight" || keypressed === "KeyD"){
-        pressdown(player.keypresseddown.moveright)
+        player.keypresseddown.moveup = true
         playerX = move(player, playerX, playerY, "right", 5)
     }
     playername.style.top = playerY
@@ -98,32 +98,22 @@ addEventListener("keyup", function keyup(event) {
     keypressed = ""
     console.log(keypressed)
     if (keypressed === "ArrowUp" || keypressed.code === "KeyW"){
-        pressup(player.keypresseddown.moveup)
+        player.keypresseddown.moveup = false
         playerY = move(player, playerX, playerY, 5)
     }
     if (keypressed === "ArrowLeft" || keypressed === "KeyA"){
-        pressup(player.keypresseddown.moveleft)
+        player.keypresseddown.moveleft = false
         playerX = move(player, playerX, playerY, "left", 5)
     }
     if (keypressed === "ArrowDown" || keypressed === "KeyS"){
-        pressup(player.keypresseddown.movedown)
+        player.keypresseddown.movedown = false
         playerY = move(player, playerX, playerY, "down", 5)
     }
     if (keypressed === "ArrowRight" || keypressed === "KeyD"){
-        pressup(player.keypresseddown.moveup)
+        player.keypresseddown.moveright = false
         playerX = move(player, playerX, playerY, "right", 5)
     }
 })
-
-function pressdown(direction){
-    console.log(direction=true)
-    direction = true
-    console.log(player.keypresseddown)
-}
-
-function pressup(direction){
-    direction = false
-}
 
 
 function move(element, elementX, elementY, distance) {
