@@ -117,7 +117,7 @@ addEventListener("keyup", function keyup(event) {
 
 function pressdown(direction){
     direction = true
-    console.log("Over here!")
+    console.log(player.keypresseddown)
 }
 
 function pressup(direction){
